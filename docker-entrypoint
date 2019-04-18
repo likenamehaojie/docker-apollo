@@ -119,28 +119,28 @@ if [ "$#" == "0" ];then
       if [[ -n "${DEV_URL}" ]];then
           echo "conn remote dev server."
       elif [[ -n "${DEV_DB}" ]];then
-          startENV dev ${DEV_DB} ${DEV_DB_USER} ${DEV_DB_PWD} ${DEV_ADMIN_PORT} ${DEV_CONFIG_PORT} ${DEV_LB}
+          startENV dev ${DEV_DB} ${DEV_DB_USER} ${DEV_DB_PWD} ${DEV_ADMIN_PORT} ${DEV_CONFIG_PORT} ${DEV_LB} ${targetEnvAddr}
       fi
     
 # fat
       if [[ -n "${FAT_URL}" ]];then
           echo "conn remote fat server."
       elif [[ -n "${FAT_DB}" ]];then
-          startENV fat ${FAT_DB} ${FAT_DB_USER} ${FAT_DB_PWD} ${FAT_ADMIN_PORT} ${FAT_CONFIG_PORT} ${FAT_LB}
+          startENV fat ${FAT_DB} ${FAT_DB_USER} ${FAT_DB_PWD} ${FAT_ADMIN_PORT} ${FAT_CONFIG_PORT} ${FAT_LB} ${targetEnvAddr}
       fi
     
 # uat
       if [[ -n "${UAT_URL}" ]];then
           echo "conn remote fat server."
       elif [[ -n "${UAT_DB}" ]];then
-          startENV uat ${UAT_DB} ${UAT_DB_USER} ${UAT_DB_PWD} ${UAT_ADMIN_PORT} ${UAT_CONFIG_PORT} ${UAT_LB}
+          startENV uat ${UAT_DB} ${UAT_DB_USER} ${UAT_DB_PWD} ${UAT_ADMIN_PORT} ${UAT_CONFIG_PORT} ${UAT_LB} ${targetEnvAddr}
       fi
     
 # pro
       if [[ -n "${PRO_URL}" ]];then
           echo "conn remote pro server."
       elif [[ -n "${PRO_DB}" ]];then
-          startENV pro ${PRO_DB} ${PRO_DB_USER} ${PRO_DB_PWD} ${PRO_ADMIN_PORT} ${PRO_CONFIG_PORT} ${PRO_LB}
+          startENV pro ${PRO_DB} ${PRO_DB_USER} ${PRO_DB_PWD} ${PRO_ADMIN_PORT} ${PRO_CONFIG_PORT} ${PRO_LB} ${targetEnvAddr}
     
       fi
 
