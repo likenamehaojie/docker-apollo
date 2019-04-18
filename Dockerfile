@@ -1,4 +1,4 @@
-FROM maven:alpine
+FROM zhangsean/maven-cn
 MAINTAINER Swire Chen <idoop@msn.cn>
 
 ENV VERSION=1.3.0 \
