@@ -16,6 +16,9 @@ ARG APOLLO_URL=https://github.com/ctripcorp/apollo/archive/v${VERSION}.tar.gz
 
 COPY docker-entrypoint /usr/local/bin/docker-entrypoint
 COPY healthcheck    /usr/local/bin/healthcheck
+RUN mkdir /home/root \
+    mkdir /home/root/.m2
+COPY settings.xml /home/root/.m2/settings.xml
 
 RUN wget ${APOLLO_URL} -O apollo.tar.gz && tar -zxf apollo.tar.gz && \
     rm apollo.tar.gz && test -e apollo-${VERSION} && \
